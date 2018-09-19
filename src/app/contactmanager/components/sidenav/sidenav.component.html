@@ -1,0 +1,16 @@
+<mat-sidenav-container class="app-sidenav-container">
+  <!-- check if the small screen, then side navigaton appears over -->
+  <mat-sidenav #sidenav [mode]="isScreenSmall()?'over' : 'side'" [opened]="!isScreenSmall()" class="app-sidenav-navigation mat-elevation-z10" >
+    <mat-toolbar color="primary">Contacts</mat-toolbar>
+    <mat-list role="list">
+      <mat-list-item role="listitem">Item 1</mat-list-item>
+      <mat-list-item role="listitem">Item 2</mat-list-item>
+      <mat-list-item role="listitem">Item 3</mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="app-sidenav-content">
+    <app-toolbar></app-toolbar>
+    <router-outlet></router-outlet>
+    <button type="button" mat-button (click) ="sidenav.toggle()">SideNav</button>
+  </mat-sidenav-content>
+</mat-sidenav-container>
