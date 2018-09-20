@@ -9,8 +9,9 @@
     </mat-list>
   </mat-sidenav>
   <mat-sidenav-content class="app-sidenav-content">
-    <app-toolbar></app-toolbar>
-    <router-outlet></router-outlet>
-    <button type="button" mat-button (click) ="sidenav.toggle()">SideNav</button>
+    <app-toolbar (toggleSidenav) ="sidenav.toggle()"></app-toolbar>
+    <div class="wrapper">
+      <router-outlet></router-outlet>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
