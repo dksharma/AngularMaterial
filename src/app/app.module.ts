@@ -5,6 +5,7 @@ import {Routes, RouterModule} from '@angular/router';
 
 import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {HttpClientModule} from '@angular/common/http';
 
 // To 'eager load' we use 'import' of a module - see imports array of ngModule.
 // to 'lazy load' - use loadChildren, this is an example of Lazy loading of modules: Demo and Contactmanager
@@ -26,6 +27,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     RouterModule.forRoot(routes),
   ],
   providers: [],

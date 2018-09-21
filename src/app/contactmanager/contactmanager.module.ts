@@ -10,10 +10,12 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { MainContentComponent } from './components/main-content/main-content.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import {ContactmanagerAppComponent} from './contactmanager-app.component';
+import {UserService} from './services/user.service';
 
 const routes: Routes = [
   {path: '', component: ContactmanagerAppComponent,
       children: [
+        {path: ':id', component: MainContentComponent},
         {path: '', component: MainContentComponent}
       ]},
   {path: '**', redirectTo: ''}
@@ -26,6 +28,9 @@ const routes: Routes = [
     FlexLayoutModule,
     FormsModule,
     RouterModule.forChild(routes)
+  ],
+  providers: [
+    UserService
   ],
   declarations: [ContactmanagerAppComponent, ToolbarComponent, MainContentComponent, SidenavComponent]
 })

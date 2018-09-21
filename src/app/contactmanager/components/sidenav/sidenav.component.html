@@ -2,11 +2,13 @@
   <!-- check if the small screen, then side navigaton appears over -->
   <mat-sidenav #sidenav [mode]="isScreenSmall()?'over' : 'side'" [opened]="!isScreenSmall()" class="app-sidenav-navigation mat-elevation-z10" >
     <mat-toolbar color="primary">Contacts</mat-toolbar>
-    <mat-list role="list">
-      <mat-list-item role="listitem">Item 1</mat-list-item>
-      <mat-list-item role="listitem">Item 2</mat-list-item>
-      <mat-list-item role="listitem">Item 3</mat-list-item>
-    </mat-list>
+    <mat-nav-list>
+      <mat-list-item *ngFor="let user of users | async">
+        <a matLine [routerLink]="['/contactmanager', user.id]">
+          <mat-icon svgIcon="{{user.avatar}}"></mat-icon> {{user.name}}
+        </a>
+      </mat-list-item>
+    </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content class="app-sidenav-content">
     <app-toolbar (toggleSidenav) ="sidenav.toggle()"></app-toolbar>
