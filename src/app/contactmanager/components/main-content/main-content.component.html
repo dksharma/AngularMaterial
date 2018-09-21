@@ -17,7 +17,10 @@
           {{user.bio}}
         </p>
       </mat-tab>
-      <!-- <mat-tab label="Notes"></mat-tab> -->
+      <mat-tab label="Notes">
+        <!-- this property 'notes' come from notes component -->
+        <app-notes [notes]="user.notes"></app-notes>
+      </mat-tab>
     </mat-tab-group>
 
   </mat-card-content>

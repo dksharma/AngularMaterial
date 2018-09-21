@@ -6,5 +6,5 @@ export class User {
   name: string;
   avatar: string;
   bio: string;
-  note: Note[] = [];
+  notes: Note[] = [];
 }
